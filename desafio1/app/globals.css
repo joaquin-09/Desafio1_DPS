@@ -333,3 +333,58 @@ body {
   color: var(--acento);
   font-weight: 600;
 }
+
+.factura-card {
+  max-width: 700px;
+  margin: 1.5rem auto;
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.factura-card h1 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.factura-datos {
+  font-size: 0.9rem;
+  color: var(--suave);
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+}
+
+.factura-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.factura-tabla th,
+.factura-tabla td {
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--borde);
+}
+
+.factura-tabla th {
+  background: #f3f4f6;
+}
+
+.factura-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.8rem 0;
+  border-top: 2px solid var(--texto);
+}
+
+.factura-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
