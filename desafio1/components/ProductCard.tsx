@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { toast } from "sonner";
 import { Product } from "@/data/products";
 
 interface ProductCardProps {
@@ -7,6 +8,11 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, onAdd }: ProductCardProps) {
+  const handleClick = () => {
+    onAdd(product);
+    toast.success(`"${product.title}" agregado al carrito`);
+  };
+
   return (
     <div className="card">
       <Image
@@ -23,7 +29,7 @@ export default function ProductCard({ product, onAdd }: ProductCardProps) {
         <p className="card-desc">{product.description}</p>
         <div className="card-footer">
           <span className="precio">${product.price.toFixed(2)}</span>
-          <button className="btn" onClick={() => onAdd(product)}>
+          <button className="btn" onClick={handleClick}>
             Agregar
           </button>
         </div>
