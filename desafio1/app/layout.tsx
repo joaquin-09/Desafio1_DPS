@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CartProvider } from "@/context/CartContext";
+import { AuthProvider } from "@/context/AuthContext";
 import { Toaster } from "sonner";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
@@ -17,11 +18,13 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-        <CartProvider>
-          <Navbar />
-          <Toaster position="top-center" richColors />
-          {children}
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <Navbar />
+            <Toaster position="top-center" richColors />
+            {children}
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );
