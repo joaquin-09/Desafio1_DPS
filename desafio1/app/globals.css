@@ -281,3 +281,55 @@ body {
   color: var(--suave);
   padding: 3rem 1rem;
 }
+
+.form-card {
+  max-width: 380px;
+  margin: 2rem auto;
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.form-card h1 {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 0.9rem;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--acento);
+}
+
+.btn-form {
+  width: 100%;
+  padding: 0.7rem;
+  background: var(--acento);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.form-link {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  color: var(--suave);
+}
+
+.form-link a {
+  color: var(--acento);
+  font-weight: 600;
+}
