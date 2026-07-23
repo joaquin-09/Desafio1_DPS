@@ -1,26 +1,150 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --fondo: #f7f7f8;
+  --texto: #1a1a1a;
+  --suave: #6b7280;
+  --acento: #1a1a1a;
+  --borde: #e5e7eb;
+  --tarjeta: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+/* --- Filtro de categorías --- */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filtro-btn {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--acento);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--acento);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filtro-btn:hover {
+  background: #eee;
+}
+
+.filtro-btn.activo {
+  background: var(--acento);
+  color: #fff;
+}
+
+/* --- Grilla de productos (mobile-first) --- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 columna en móvil */
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 en tablet */
+  }
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 en desktop */
+  }
+}
+
+/* --- Tarjeta de producto --- */
+.card {
+  display: flex;
+  gap: 0.9rem;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 0.9rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.card-img {
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+.card-author {
+  font-size: 0.8rem;
+  color: var(--suave);
+  margin-bottom: 0.35rem;
+}
+
+.card-badge {
+  align-self: flex-start;
+  font-size: 0.7rem;
+  background: #eee;
+  color: var(--suave);
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  font-size: 0.8rem;
+  color: var(--suave);
+  flex-grow: 1;
+  margin-bottom: 0.6rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.precio {
+  font-weight: 700;
+}
+
+.btn {
+  padding: 0.35rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--acento);
+  color: #fff;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.85;
 }
