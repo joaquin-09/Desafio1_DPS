@@ -17,16 +17,14 @@ export default function Home() {
   };
 
   return (
-    <main className="container py-4">
-      <h1 className="mb-4">📚 Librería</h1>
+    <main className="container">
+      <h1 style={{ marginBottom: "1.5rem" }}>📚 Librería</h1>
 
-      <div className="d-flex flex-wrap gap-2 mb-4">
+      <div className="filtros">
         {categories.map((cat) => (
           <button
             key={cat}
-            className={`btn btn-sm ${
-              selected === cat ? "btn-dark" : "btn-outline-dark"
-            }`}
+            className={`filtro-btn ${selected === cat ? "activo" : ""}`}
             onClick={() => setSelected(cat)}
           >
             {cat}
@@ -34,11 +32,9 @@ export default function Home() {
         ))}
       </div>
 
-      <div className="row g-3">
+      <div className="grid">
         {filtered.map((product) => (
-          <div key={product.id} className="col-12 col-md-6 col-lg-4">
-            <ProductCard product={product} onAdd={handleAdd} />
-          </div>
+          <ProductCard key={product.id} product={product} onAdd={handleAdd} />
         ))}
       </div>
     </main>
