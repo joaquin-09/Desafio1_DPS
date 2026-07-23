@@ -93,16 +93,12 @@ export default function FacturaPage() {
   const enviarCorreo = async () => {
     const detalle = items
       .map(
-        (item) => `
-          <tr>
-            <td style="padding: 8px; border-bottom: 1px solid #e5e7eb;">${item.title}</td>
-            <td style="padding: 8px; text-align: center; border-bottom: 1px solid #e5e7eb;">${item.quantity}</td>
-            <td style="padding: 8px; text-align: right; border-bottom: 1px solid #e5e7eb;">$${(
-              item.price * item.quantity
-            ).toFixed(2)}</td>
-          </tr>`
+        (item) =>
+          `• ${item.title}  —  x${item.quantity}  —  $${(
+            item.price * item.quantity
+          ).toFixed(2)}`
       )
-      .join("");
+      .join("\n");
 
     const params = {
       numero: numero,
