@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { CartProvider } from "@/context/CartContext";
+import { Toaster } from "sonner";
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,7 +17,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-        <CartProvider>{children}</CartProvider>
+        <CartProvider>
+          <Navbar />
+          <Toaster position="top-center" richColors />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );
